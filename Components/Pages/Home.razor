@@ -1,0 +1,132 @@
+﻿@page "/"
+
+<PageTitle>Home</PageTitle>
+
+<h1 class="main-title">Silence</h1>
+
+<div class="intro-container">
+    <div class="intro-content">
+        <p>
+            This project was created by two dedicated interns who spent days learning, experimenting, and building.
+            Their goal was to create a simple, beautiful system to manage your projects effectively.
+        </p>
+    </div>
+    <div class="hover-message">
+        You're Welcome.
+    </div>
+</div>
+
+<div class="button-section">
+    <div class="button-container" @onclick="@(() => NavigationManager.NavigateTo("/projectView"))">
+        <div class="button-wrapper">Subscription Plans</div>
+        <div class="button-description">These are subscription plans we offer for using our service.</div>
+    </div>
+
+    <div class="button-container" @onclick="@(() => NavigationManager.NavigateTo("/create-project"))">
+        <div class="button-wrapper">Create Project</div>
+        <div class="button-description">Create your own project and manage it directly from the platform.</div>
+    </div>
+
+    <div class="button-container" @onclick="@(() => NavigationManager.NavigateTo("/projects"))">
+        <div class="button-wrapper">Project List</div>
+        <div class="button-description">View the list of all your existing projects.</div>
+    </div>
+</div>
+
+@inject NavigationManager NavigationManager
+
+<style>
+
+.main-title {
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.intro-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.4s ease;
+}
+
+.intro-content,
+.hover-message {
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.hover-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #0078D7;
+    pointer-events: none;
+}
+
+.intro-container:hover .intro-content {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.intro-container:hover .hover-message {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.05);
+}
+
+.button-section {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.button-wrapper {
+    padding: 14px 24px;
+    font-size: 1rem;
+    background-color: #0078D7;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    user-select: none;
+}
+
+.button-wrapper:hover {
+    background-color: #005a9e;
+    transform: translateY(-2px);
+}
+
+.button-description {
+    margin-top: 8px;
+    font-size: 0.95rem;
+    color: #444;
+    max-width: 200px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    pointer-events: none;
+}
+
+.button-container:hover .button-description {
+    opacity: 1;
+    transform: translateY(0);
+}
+</style>

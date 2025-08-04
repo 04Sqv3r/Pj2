@@ -1,0 +1,84 @@
+﻿@page "/projectView"
+
+<h2>Subscription Plans</h2>
+
+<div class="plans-container">
+    <table class="plan-table">
+        <thead>
+            <tr><th colspan="2">Free Plan</th></tr>
+            <tr><td>Price:</td><td>Free</td></tr>
+        </thead>
+        <tbody>
+            <tr><td>Project Storage:</td><td>Up to 3 projects</td></tr>
+            <tr><td>Support:</td><td>Email support</td></tr>
+            <tr><td>Features:</td><td>Basic features</td></tr>
+        </tbody>
+    </table>
+
+    <table class="plan-table">
+        <thead>
+            <tr><th colspan="2">Standard Plan</th></tr>
+            <tr><td>Price:</td><td>30 PLN / month</td></tr>
+        </thead>
+        <tbody>
+            <tr><td>Project Storage:</td><td>Up to 10 projects</td></tr>
+            <tr><td>Support:</td><td>Priority email support</td></tr>
+            <tr><td>Features:</td><td>Standard features + backups</td></tr>
+        </tbody>
+    </table>
+
+    <table class="plan-table">
+        <thead>
+            <tr><th colspan="2">Premium Plan</th></tr>
+            <tr><td>Price:</td><td>60 PLN / month</td></tr>
+        </thead>
+        <tbody>
+            <tr><td>Project Storage:</td><td>Unlimited projects</td></tr>
+            <tr><td>Support:</td><td>24/7 Phone & Email support</td></tr>
+            <tr><td>Features:</td><td>All features + premium analytics</td></tr>
+        </tbody>
+    </table>
+</div>
+
+<style>
+.plans-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.plan-table {
+    border-collapse: collapse;
+    width: 250px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 6px;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.plan-table th {
+    background-color: #0078D7;
+    color: white;
+    padding: 12px;
+    font-size: 18px;
+}
+
+.plan-table td {
+    border-top: 1px solid #ddd;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.plan-table tr:nth-child(even) td {
+    background-color: #f9f9f9;
+}
+
+.plan-table:hover {
+    background-color: #f0f8ff;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+</style>
